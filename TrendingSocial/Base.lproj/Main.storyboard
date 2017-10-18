@@ -33,14 +33,39 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mng-9M-5OE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kickflip" translatesAutoresizingMaskIntoConstraints="NO" id="9VU-ag-9N3">
+                                        <rect key="frame" x="67" y="225" width="240" height="217"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="6g2-Ct-H1n"/>
+                                            <constraint firstAttribute="height" constant="217" id="Qj5-K6-fna"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.08725101500749588" green="0.81567108631134033" blue="0.067527994513511658" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="9VU-ag-9N3" firstAttribute="centerX" secondItem="Mng-9M-5OE" secondAttribute="centerX" id="1KH-Id-af6"/>
+                                    <constraint firstItem="9VU-ag-9N3" firstAttribute="centerY" secondItem="Mng-9M-5OE" secondAttribute="centerY" id="sey-Tk-zTl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Mng-9M-5OE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7hy-ae-vw8"/>
+                            <constraint firstItem="Mng-9M-5OE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="A2R-f7-jB0"/>
+                            <constraint firstItem="Mng-9M-5OE" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="LMl-hC-9Cq"/>
+                            <constraint firstItem="Mng-9M-5OE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="g4F-Tu-dgX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="3Qx-xB-yZZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-497" y="176"/>
+            <point key="canvasLocation" x="-498.39999999999998" y="175.86206896551727"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="Muz-pe-d9K">
@@ -59,4 +84,7 @@
             <point key="canvasLocation" x="-498" y="954"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="kickflip" width="315" height="315"/>
+    </resources>
 </document>

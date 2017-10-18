@@ -10,7 +10,7 @@ import UIKit
 import AWSPinpoint
 import AWSAuthCore
 import AWSUserPoolsSignIn
-
+import AWSFacebookSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         AWSSignInManager.sharedInstance().register(
             signInProvider: AWSCognitoUserPoolsSignInProvider.sharedInstance())
+        
+        AWSSignInManager.sharedInstance().register(
+            signInProvider: AWSFacebookSignInProvider.sharedInstance())
+        
+        AWSFacebookSignInProvider.sharedInstance().setPermissions(["public_profile"])
         
         let didFinishLaunching = AWSSignInManager.sharedInstance().interceptApplication(
             application, didFinishLaunchingWithOptions: launchOptions)

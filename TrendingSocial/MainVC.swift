@@ -9,6 +9,7 @@
 import UIKit
 import AWSAuthUI
 import AWSUserPoolsSignIn
+import AWSFacebookSignIn
 
 class MainVC: UIViewController {
     
@@ -16,15 +17,21 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         
         
-         //AWSSignInManager.sharedInstance().isLoggedIn
-        presentAuthUIViewController()
+        if !AWSSignInManager.sharedInstance().isLoggedIn {
+            
+            presentAuthUIViewController()
+        }
+      
+        
     }
 
     func presentAuthUIViewController() {
         let config = AWSAuthUIConfiguration()
         config.enableUserPoolsUI = true
+        config.addSignInButtonView(class: AWSFacebookSignInButton.self)
+        
         // you can use properties like logoImage, backgroundColor to customize screen
-        // config.canCancel = false // prevent end user dismissal of the sign in screen
+        config.canCancel = false // prevent end user dismissal of the sign in screen
         
         // you should have a navigation controller for your view controller
         // the sign in screen is presented using the navigation controller

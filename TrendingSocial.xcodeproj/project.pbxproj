@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1602DF061F96F3AF002F135A /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 1602DF051F96F3AF002F135A /* awsconfiguration.json */; };
 		168C88581F96BF19008DBA02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C88571F96BF19008DBA02 /* AppDelegate.swift */; };
 		168C885A1F96BF19008DBA02 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C88591F96BF19008DBA02 /* MainVC.swift */; };
 		168C885D1F96BF19008DBA02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 168C885B1F96BF19008DBA02 /* Main.storyboard */; };
 		168C885F1F96BF19008DBA02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 168C885E1F96BF19008DBA02 /* Assets.xcassets */; };
 		168C88621F96BF19008DBA02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 168C88601F96BF19008DBA02 /* LaunchScreen.storyboard */; };
-		168C886E1F96D90C008DBA02 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 168C886D1F96D90C008DBA02 /* awsconfiguration.json */; };
 		37C26063A68BE29B292EA7B8 /* Pods_TrendingSocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E54A0935FE80D6B925289ECB /* Pods_TrendingSocial.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1602DF051F96F3AF002F135A /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		160465C91F96F41C0095A039 /* TrendingSocial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrendingSocial.entitlements; sourceTree = "<group>"; };
 		168C88541F96BF19008DBA02 /* TrendingSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendingSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		168C88571F96BF19008DBA02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		168C88591F96BF19008DBA02 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -24,7 +26,6 @@
 		168C885E1F96BF19008DBA02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		168C88611F96BF19008DBA02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		168C88631F96BF19008DBA02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		168C886D1F96D90C008DBA02 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		B8907E51508E7D92557F824F /* Pods-TrendingSocial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrendingSocial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrendingSocial/Pods-TrendingSocial.debug.xcconfig"; sourceTree = "<group>"; };
 		E54A0935FE80D6B925289ECB /* Pods_TrendingSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrendingSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42A10169B1903BD288C5323 /* Pods-TrendingSocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrendingSocial.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrendingSocial/Pods-TrendingSocial.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,13 +64,14 @@
 		168C88561F96BF19008DBA02 /* TrendingSocial */ = {
 			isa = PBXGroup;
 			children = (
+				160465C91F96F41C0095A039 /* TrendingSocial.entitlements */,
 				168C88571F96BF19008DBA02 /* AppDelegate.swift */,
 				168C88591F96BF19008DBA02 /* MainVC.swift */,
 				168C885B1F96BF19008DBA02 /* Main.storyboard */,
 				168C885E1F96BF19008DBA02 /* Assets.xcassets */,
 				168C88601F96BF19008DBA02 /* LaunchScreen.storyboard */,
 				168C88631F96BF19008DBA02 /* Info.plist */,
-				168C886D1F96D90C008DBA02 /* awsconfiguration.json */,
+				1602DF051F96F3AF002F135A /* awsconfiguration.json */,
 			);
 			path = TrendingSocial;
 			sourceTree = "<group>";
@@ -127,6 +129,11 @@
 					168C88531F96BF19008DBA02 = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -153,7 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				168C886E1F96D90C008DBA02 /* awsconfiguration.json in Resources */,
+				1602DF061F96F3AF002F135A /* awsconfiguration.json in Resources */,
 				168C88621F96BF19008DBA02 /* LaunchScreen.storyboard in Resources */,
 				168C885F1F96BF19008DBA02 /* Assets.xcassets in Resources */,
 				168C885D1F96BF19008DBA02 /* Main.storyboard in Resources */,
@@ -192,8 +199,12 @@
 				"${BUILT_PRODUCTS_DIR}/AWSAuthUI/AWSAuthUI.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSFacebookSignIn/AWSFacebookSignIn.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSPinpoint/AWSPinpoint.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSUserPoolsSignIn/AWSUserPoolsSignIn.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -201,8 +212,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthUI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProvider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSFacebookSignIn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSPinpoint.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSUserPoolsSignIn.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -370,6 +385,7 @@
 			baseConfigurationReference = B8907E51508E7D92557F824F /* Pods-TrendingSocial.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TrendingSocial/TrendingSocial.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8S8H54VKPE;
 				INFOPLIST_FILE = TrendingSocial/Info.plist;
@@ -386,6 +402,7 @@
 			baseConfigurationReference = F42A10169B1903BD288C5323 /* Pods-TrendingSocial.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TrendingSocial/TrendingSocial.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8S8H54VKPE;
 				INFOPLIST_FILE = TrendingSocial/Info.plist;
