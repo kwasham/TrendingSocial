@@ -1,0 +1,66 @@
+{
+  "UserAgent": "MobileHub/1.0",
+  "Version": "1.0",
+  "CredentialsProvider": {
+    "CognitoIdentity": {
+      "Default": {
+        "PoolId": "us-east-1:faf54e4a-253a-467f-b0e9-10fbac834521",
+        "Region": "us-east-1"
+      }
+    }
+  },
+  "IdentityManager": {
+    "Default": {}
+  },
+  "CognitoUserPool": {
+    "Default": {
+      "PoolId": "us-east-1_DRx3siWLc",
+      "AppClientId": "1qrlfp287l9f5uca48df2p6rn9",
+      "AppClientSecret": "1uncr9vgpj1ivg3jcdipvi6bbk4j8hv9aeu33tbjdo96hcrer8hf",
+      "Region": "us-east-1"
+    }
+  },
+  "S3TransferUtility": {
+    "Default": {
+      "Bucket": "trendingsocial-userfiles-mobilehub-1241848596",
+      "Region": "us-east-1"
+    }
+  },
+  "Cognito": {
+    "Default": {
+      "Region": "us-east-1"
+    }
+  },
+  "DynamoDBObjectMapper": {
+    "Default": {
+      "Region": "us-east-1"
+    }
+  },
+  "ContentManager": {
+    "Default": {
+      "Bucket": "trendingsocial-hosting-mobilehub-1241848596",
+      "Region": "us-east-1",
+      "CloudFrontURL": "https://d23mvf4oemadfj.cloudfront.net"
+    }
+  },
+  "PinpointAnalytics": {
+    "Default": {
+      "AppId": "05d0884a2afe4ee2ab6eb975566311e9",
+      "Region": "us-east-1"
+    }
+  },
+  "PinpointTargeting": {
+    "Default": {
+      "Region": "us-east-1"
+    }
+  },
+  "UserFileManager": {
+    "Default": {
+      "Bucket": "trendingsocial-userfiles-mobilehub-1241848596",
+      "Region": "us-east-1"
+    }
+  },
+  "FacebookSignIn": {
+    "AppId": "666444263480015"
+  }
+}
