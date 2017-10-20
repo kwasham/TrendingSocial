@@ -5,7 +5,7 @@ target 'MySampleApp' do
   use_frameworks!
 
   # Pods for MySampleApp
-
+  pod 'Alamofire', '~> 4.5'
   pod 'AWSAuthCore', '~> 2.6.1'
   pod 'AWSS3', '~> 2.6.1'
   pod 'AWSDynamoDB', '~> 2.6.1'

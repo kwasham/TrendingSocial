@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         pinpoint = AWSPinpoint(configuration:AWSPinpointConfiguration.defaultPinpointConfiguration(launchOptions: launchOptions))
         if (!isInitialized) {
             AWSSignInManager.sharedInstance().resumeSession(completionHandler: { (result: Any?, error: Error?) in
-                print("Result: \(result) \n Error:\(error)")
+                print("Result: \(String(describing: result)) \n Error:\(String(describing: error))")
             })
             isInitialized = true
         }

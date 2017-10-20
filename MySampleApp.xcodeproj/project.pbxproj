@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		169409E61F997A3B00C5B4B7 /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 169409E51F997A3B00C5B4B7 /* Weather.storyboard */; };
+		169409E81F997EF000C5B4B7 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169409E71F997EF000C5B4B7 /* WeatherVC.swift */; };
 		E7A30F0401AB593000000000 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD70E29DBFB0B3000000000 /* UtilityFunctions.swift */; };
 		E7A30F04054111B800000000 /* NoSQLQueryResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD70E292D68147D00000000 /* NoSQLQueryResultViewController.swift */; };
 		E7A30F0407513AA900000000 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E295413784700000000 /* QuartzCore.framework */; };
@@ -87,6 +89,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		169409E51F997A3B00C5B4B7 /* Weather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Weather.storyboard; path = MySampleApp/mysampleapp/app/View/Weather.storyboard; sourceTree = SOURCE_ROOT; };
+		169409E71F997EF000C5B4B7 /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
 		1DD70E290280702600000000 /* BotOperationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BotOperationsViewController.swift; path = MySampleApp/Demo/Bots/BotOperationsViewController.swift; sourceTree = SOURCE_ROOT; };
 		1DD70E290350BF4400000000 /* awsconfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = awsconfiguration.json; path = MySampleApp/App/SupportingFiles/awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		1DD70E290C4B1EDB00000000 /* NoSQLSampleDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoSQLSampleDataGenerator.swift; path = MySampleApp/Demo/NoSQL/NoSQLSampleDataGenerator.swift; sourceTree = SOURCE_ROOT; };
@@ -183,6 +187,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		169409E21F9978B200C5B4B7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				169409E71F997EF000C5B4B7 /* WeatherVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		169409E31F9978C700C5B4B7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				169409E51F997A3B00C5B4B7 /* Weather.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		169409E41F9978D400C5B4B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6195AE8D2B65F2FD92458D9B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +258,9 @@
 		B401C97951E38D6500000000 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				169409E41F9978D400C5B4B7 /* Model */,
+				169409E31F9978C700C5B4B7 /* View */,
+				169409E21F9978B200C5B4B7 /* Controller */,
 				1DD70E291EC00DA700000000 /* AppDelegate.swift */,
 				1DD70E29607FAB8500000000 /* Images.xcassets */,
 				1DD70E29E42034F500000000 /* Launch Screen.storyboard */,
@@ -455,7 +485,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				TargetAttributes = {
 					E66DC04E0000000000000000 = {
 						DevelopmentTeam = 8S8H54VKPE;
@@ -487,6 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7A30F04A037686F00000000 /* Launch Screen.storyboard in Resources */,
+				169409E61F997A3B00C5B4B7 /* Weather.storyboard in Resources */,
 				E7A30F04AFD7308D00000000 /* BotTextChat.storyboard in Resources */,
 				E7A30F0459A6E40E00000000 /* Images.xcassets in Resources */,
 				E7A30F04F7D0D0EB00000000 /* UserSettings.storyboard in Resources */,
@@ -524,6 +555,7 @@
 				"${BUILT_PRODUCTS_DIR}/AWSPinpoint/AWSPinpoint.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSUserPoolsSignIn/AWSUserPoolsSignIn.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -541,6 +573,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSPinpoint.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSUserPoolsSignIn.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -609,6 +642,7 @@
 				E7A30F046B50718600000000 /* UserFilesViewController.swift in Sources */,
 				E7A30F0436BD374100000000 /* NoSQLTableListViewController.swift in Sources */,
 				E7A30F04C456522500000000 /* NoSQLTableFactory.swift in Sources */,
+				169409E81F997EF000C5B4B7 /* WeatherVC.swift in Sources */,
 				E7A30F046C5A0D7100000000 /* UserSettingsViewController.swift in Sources */,
 				E7A30F04BD0BEF2900000000 /* AppDelegate.swift in Sources */,
 				E7A30F041A08080C00000000 /* NewsTable.swift in Sources */,
@@ -645,14 +679,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -674,6 +714,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -718,14 +759,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

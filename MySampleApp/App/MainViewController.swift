@@ -53,7 +53,7 @@ class MainViewController: UITableViewController {
                 comment: "Label for demo menu option."),
             detail: NSLocalizedString("Enable user login with popular 3rd party providers.",
                 comment: "Description for demo menu option."),
-            icon: "UserIdentityIcon", storyboard: "UserIdentity")
+            icon: "UserIdentityIcon", storyboard: "Weather")
         
         demoFeatures.append(demoFeature)
         

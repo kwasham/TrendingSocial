@@ -266,7 +266,7 @@ class ContentDeliveryViewController: UITableViewController {
     fileprivate func openRemoteContent(_ content: AWSContent) {
         content.getRemoteFileURL { (url: URL?, error: Error?) in
             guard let url = url else {
-                print("Error getting URL for file. \(error)")
+                print("Error getting URL for file. \(String(describing: error))")
                 return
             }
             if content.isAudioVideo() { // Open Audio and Video files natively in app.
