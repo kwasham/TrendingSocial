@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		163A581B1F9AA35D00FDF04D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163A581A1F9AA35D00FDF04D /* Constants.swift */; };
+		163A581D1F9AA71E00FDF04D /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163A581C1F9AA71E00FDF04D /* CurrentWeather.swift */; };
+		163A581F1F9B035C00FDF04D /* Forcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163A581E1F9B035C00FDF04D /* Forcast.swift */; };
 		169409E61F997A3B00C5B4B7 /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 169409E51F997A3B00C5B4B7 /* Weather.storyboard */; };
 		169409E81F997EF000C5B4B7 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169409E71F997EF000C5B4B7 /* WeatherVC.swift */; };
 		E7A30F0401AB593000000000 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD70E29DBFB0B3000000000 /* UtilityFunctions.swift */; };
@@ -89,6 +92,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		163A581A1F9AA35D00FDF04D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = MySampleApp/mysampleapp/app/Constants.swift; sourceTree = SOURCE_ROOT; };
+		163A581C1F9AA71E00FDF04D /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrentWeather.swift; path = mysampleapp/mysampleapp/app/Model/CurrentWeather.swift; sourceTree = SOURCE_ROOT; };
+		163A581E1F9B035C00FDF04D /* Forcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Forcast.swift; path = mysampleapp/mysampleapp/app/Model/Forcast.swift; sourceTree = SOURCE_ROOT; };
 		169409E51F997A3B00C5B4B7 /* Weather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Weather.storyboard; path = MySampleApp/mysampleapp/app/View/Weather.storyboard; sourceTree = SOURCE_ROOT; };
 		169409E71F997EF000C5B4B7 /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
 		1DD70E290280702600000000 /* BotOperationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BotOperationsViewController.swift; path = MySampleApp/Demo/Bots/BotOperationsViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -190,7 +196,6 @@
 		169409E21F9978B200C5B4B7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				169409E71F997EF000C5B4B7 /* WeatherVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 		169409E31F9978C700C5B4B7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				169409E71F997EF000C5B4B7 /* WeatherVC.swift */,
 				169409E51F997A3B00C5B4B7 /* Weather.storyboard */,
 			);
 			path = View;
@@ -206,6 +212,8 @@
 		169409E41F9978D400C5B4B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				163A581E1F9B035C00FDF04D /* Forcast.swift */,
+				163A581C1F9AA71E00FDF04D /* CurrentWeather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -258,6 +266,7 @@
 		B401C97951E38D6500000000 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				163A581A1F9AA35D00FDF04D /* Constants.swift */,
 				169409E41F9978D400C5B4B7 /* Model */,
 				169409E31F9978C700C5B4B7 /* View */,
 				169409E21F9978B200C5B4B7 /* Controller */,
@@ -641,6 +650,7 @@
 				E7A30F04054111B800000000 /* NoSQLQueryResultViewController.swift in Sources */,
 				E7A30F046B50718600000000 /* UserFilesViewController.swift in Sources */,
 				E7A30F0436BD374100000000 /* NoSQLTableListViewController.swift in Sources */,
+				163A581B1F9AA35D00FDF04D /* Constants.swift in Sources */,
 				E7A30F04C456522500000000 /* NoSQLTableFactory.swift in Sources */,
 				169409E81F997EF000C5B4B7 /* WeatherVC.swift in Sources */,
 				E7A30F046C5A0D7100000000 /* UserSettingsViewController.swift in Sources */,
@@ -657,9 +667,11 @@
 				E7A30F04559ED39700000000 /* BotsFactory.swift in Sources */,
 				E7A30F040ED565D400000000 /* BotOperationsViewController.swift in Sources */,
 				E7A30F0476E9634500000000 /* NoSQLSampleDataGenerator.swift in Sources */,
+				163A581D1F9AA71E00FDF04D /* CurrentWeather.swift in Sources */,
 				E7A30F0401AB593000000000 /* UtilityFunctions.swift in Sources */,
 				E7A30F047F82983000000000 /* NoSQLTableViewController.swift in Sources */,
 				E7A30F04E3BF27ED00000000 /* MainViewController.swift in Sources */,
+				163A581F1F9B035C00FDF04D /* Forcast.swift in Sources */,
 				E7A30F0460EB778000000000 /* NoSQLModelHelpers.swift in Sources */,
 				E7A30F0454CB432200000000 /* UserEngageViewController.swift in Sources */,
 				E7A30F047E096F2900000000 /* BotTextChatViewController.swift in Sources */,
