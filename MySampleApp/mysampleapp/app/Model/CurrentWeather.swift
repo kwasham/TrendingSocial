@@ -13,6 +13,17 @@ class CurrentWeather {
     var _date: String!
     var _weatherType: String!
     var _currentTemp: Double!
+    var _currentLocation: String!
+    var _locationKey: Int!
+    
+    
+    var locationKey: Int {
+        if _locationKey==nil {
+            _locationKey = 0
+        }
+        return _locationKey
+    }
+    
     
     var cityName: String {
         if _cityName == nil {
@@ -31,7 +42,6 @@ class CurrentWeather {
         dateFormatter.timeStyle = .none
         let currentDate = dateFormatter.string(from: Date())
         self._date = "Today, \(currentDate)"
-        
         return _date
     }
     
@@ -49,45 +59,73 @@ class CurrentWeather {
         return _currentTemp
     }
     
-    func downloadWeatherDetails(completed: @escaping DownloadComplete) {
-        // Alamofire download
-        //let currentWeatherURL = URL(string: CURRENT_WEATHER_URL)!
-        Alamofire.request(CURRENT_WEATHER_URL).responseJSON { response in
+    func downloadCurrentLocation(completed: @escaping DownloadComplete) {
+        Alamofire.request(CURRENT_LOCATION_URL).responseJSON { response in
             let result = response.result
-           
+            print(result.value)
             if let dict = result.value as? Dictionary<String, AnyObject> {
                 
-                if let name = dict["name"] as? String {
+                if let importedLocationKey = dict["Key"] as? String {
+                    let myString2 = importedLocationKey
+                    let myInt2 = (myString2 as NSString).integerValue
+                   //
+                    self._locationKey = myInt2
+                   Location.sharedInstance.locationKey = myInt2
+                    print("KIRK: \(myInt2)")
+                }
+                if let name = dict["LocalizedName"] as? String {
                     self._cityName = name.capitalized
-                    print(self._cityName)
+                   // print(self._cityName)
                 }
-                
-                if let weather = dict["weather"] as? [Dictionary<String, AnyObject>] {
-                    
-                    if let main = weather[0]["main"] as? String {
-                        self._weatherType = main.capitalized
-                        print(self._weatherType)
-                    }
-             
-                }
-                
-                if let main = dict ["main"] as? Dictionary<String, AnyObject> {
-                    if let currentTemperature = main["temp"] as? Double {
-                        
-                        let kelvinToFarenheitPredivision = (currentTemperature * (9/5) - 459.67)
-                        
-                        let kelvinToFarenheit = Double(round(10 * kelvinToFarenheitPredivision/10))
-                        
-                        self._currentTemp = kelvinToFarenheit
-                        print(self._currentTemp)
-                    }
-                }
-                
+            }
             
-        }
         completed()
+        
+    }
     }
     
     
+    func downloadWeatherDetails(completed: @escaping DownloadComplete) {
+        //Download Current Weather Data
+        Alamofire.request(CURRENT_WEATHER_URL).responseJSON { response in
+            let result = response.result
+       //print(result.value)
+            if let dict = result.value as? [Dictionary<String, AnyObject>] {
+                
+               
+                
+                if let temp = dict[0]["Temperature"] as? Dictionary<String, AnyObject> {
+                    
+                    if let imperial = temp["Imperial"] as? Dictionary<String, AnyObject> {
+                        if let value = imperial["Value"] as? Double {
+                        
+                        self._currentTemp = value
+                        print(self._currentTemp)
+                    }
+                }
+            }
+                if let weather =  dict[0]["WeatherText"] as? String {
+                    self._weatherType = weather
+                    
+                }
+                
+//                if let main = dict["main"] as? Dictionary<String, AnyObject> {
+//
+//                    if let currentTemperature = main["temp"] as? Double {
+//
+//                        let kelvinToFarenheitPreDivision = (currentTemperature * (9/5) - 459.67)
+//
+//                        let kelvinToFarenheit = Double(round(10 * kelvinToFarenheitPreDivision/10))
+//
+//                        self._currentTemp = kelvinToFarenheit
+//                        print(self._currentTemp)
+//                    }
+//                }
+            }
+            completed()
+        }
+    }
 }
-}
+
+
+

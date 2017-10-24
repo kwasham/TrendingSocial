@@ -6,9 +6,10 @@
 //
 
 import UIKit
-import  Alamofire
+import CoreLocation
+import Alamofire
 
-class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
 
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -22,59 +23,119 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var currentWeatherTypeLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
-   
+    
+    let locationManager = CLLocationManager()
+    var currentLocation: CLLocation!
+    var locationKey: Int!
     var currentWeather = CurrentWeather()
     var forcast: Forcast!
     var forcasts = [Forcast]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startMonitoringSignificantLocationChanges()
         
         tableView.delegate = self
         tableView.dataSource = self
         currentWeather = CurrentWeather()
+        
+      
+       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
        
         
-        currentWeather.downloadWeatherDetails {
-            self.downloadForcastData {
-                self.updateMainUI()
+        locationAuthStatus()
+    }
+    
+    func locationAuthStatus() {
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            currentLocation = locationManager.location
+            
+            
+            Location.sharedInstance.latitude = currentLocation.coordinate.latitude
+            Location.sharedInstance.longitude = currentLocation.coordinate.longitude
+            
+            
+                
+            
+                currentWeather.downloadCurrentLocation {
+                
+                   
+                self.currentWeather.downloadWeatherDetails {
+                    
+                    
+                  
+                    self.downloadForcastData {
+                    self.updateMainUI()
+                        
+                    }
+                }
+                
             }
+            
+           
+            
+            
+            print(Location.sharedInstance.latitude, Location.sharedInstance.longitude)
+        }else{
+            locationManager.requestWhenInUseAuthorization()
+            locationAuthStatus()
         }
     }
+    
     
     func downloadForcastData(completed: @escaping DownloadComplete) {
         //Downloading our forcast weather data for tableview
-        let forcastURL = URL(string: FORCAST_URL)
-        Alamofire.request(forcastURL!).responseJSON { response in
+        
+        Alamofire.request(FORCAST_URL).responseJSON { response in
             let result = response.result
             
-            if let dict = result.value as? Dictionary <String, AnyObject> {
+            if let dict = result.value as? Dictionary<String , AnyObject> {
+                print(result.value!)
             
-            if let list = dict["list"] as? [Dictionary<String, AnyObject>] {
+                if let dailyForcasts = dict["DailyForecasts"] as? [Dictionary <String , AnyObject>] {
                 
-                for obj in list {
+                for obj in dailyForcasts {
+                   
                     let forcast = Forcast(weatherDict: obj)
                     self.forcasts.append(forcast)
-                    print(obj)
+                   
                 }
+                //self.forcasts.remove(at: 0)
+                self.tableView.reloadData()
                 }
             }
            completed()
-            
         }
-    }
     
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return forcasts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as? WeatherCell {
+            
+            let forcast = forcasts[indexPath.row]
+          
+        cell.configureCell(forcast: forcast)
         return cell
+        
+        }else{
+            return WeatherCell()
+        }
+        
     }
     
     func updateMainUI() {

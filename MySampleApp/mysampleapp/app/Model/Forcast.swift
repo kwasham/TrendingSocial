@@ -12,73 +12,71 @@ class Forcast {
     
     var _date: String!
     var _weatherType: String!
-    var _highTemp: String!
-    var _lowTemp: String!
+    var _highTemp: Double!
+    var _lowTemp: Double!
     
     var date: String {
         if _date == nil {
-            _date = ""
+            _date = "Date"
        }
         return _date
     }
     
     var weatherType : String {
         if _weatherType == nil {
-            _weatherType = ""
+            _weatherType = "No Type"
         }
         return _weatherType
     }
     
-    var highTemp: String {
+    var highTemp: Double {
         if _highTemp == nil {
-            _highTemp = ""
+            _highTemp = 54
         }
         return _highTemp
+        
     }
     
-    var lowTemp: String {
+    var lowTemp: Double {
         if _lowTemp == nil {
-            _lowTemp = ""
+            _lowTemp = 17
         }
         return _lowTemp
     }
+    
+    
 
     init(weatherDict: Dictionary<String, AnyObject>) {
-       
-        if let temp = weatherDict["temp"] as? Dictionary<String, AnyObject> {
-        
-        if let min = temp["min"] as? Double {
-        
-        let kelvinToFarenheitPredivision = (min * (9/5) - 459.67)
-        
-        let kelvinToFarenheit = Double(round(10 * kelvinToFarenheitPredivision/10))
-        
-        self._lowTemp = "\(kelvinToFarenheit)"
-        
-        }
-        
-        
-            if let max = temp["max"] as? Double {
-                let kelvinToFarenheitPredivision = (max * (9/5) - 459.67)
-                
-                let kelvinToFarenheit = Double(round(10 * kelvinToFarenheitPredivision/10))
-                
-                self._highTemp = "\(kelvinToFarenheit)"
-                
-                
-      }
+
             
-    }
-        
-    
-        
-        if let weather = weatherDict["weather"] as? [Dictionary<String, AnyObject>] {
-            if let main = weather [0]["main"] as? String {
-                self._weatherType = main
+        if let temp = weatherDict["Temperature"] as? Dictionary<String, AnyObject> {
+            if let min = temp["Minimum"] as? Dictionary<String, AnyObject> {
+                if let value = min["Value"] as? Double {
+                    self._lowTemp = value
+                }
             }
+
         }
-    
-        if let date = weatherDict["dt"] as? Double {
+
+
+            if let temp = weatherDict["Temperature"] as? Dictionary<String, AnyObject> {
+                if let max = temp["Maximum"] as? Dictionary<String, AnyObject> {
+                    if let value = max["Value"] as? Double {
+                        self._highTemp = value
+                    }
+                }
+            }
+
+
+            if let weatherType = weatherDict["Day"] as? Dictionary<String, AnyObject> {
+                if let weatherPhrase = weatherType["IconPhrase"] as? String {
+
+                        self._weatherType = weatherPhrase
+                    }
+                }
+
+
+        if let date = weatherDict["EpochDate"] as? Double {
             let unixConvertedDate = Date(timeIntervalSince1970: date)
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .full
@@ -86,9 +84,10 @@ class Forcast {
             dateFormatter.timeStyle = .none
             self._date = unixConvertedDate.dayOfTheWeek()
         }
-   
+        }
+
     }
-}
+
 
 extension Date {
     func dayOfTheWeek() -> String {
@@ -100,7 +99,5 @@ extension Date {
 
 
 }
-
-
 
 
