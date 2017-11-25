@@ -71,7 +71,7 @@ class ContentDeliveryViewController: UITableViewController {
     
     // MARK: - Content Manager user action methods
     
-    func showContentManagerActionOptions(_ sender: AnyObject) {
+    @objc func showContentManagerActionOptions(_ sender: AnyObject) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let refreshAction = UIAlertAction(title: "Refresh", style: .default, handler: {[unowned self](action: UIAlertAction) -> Void in

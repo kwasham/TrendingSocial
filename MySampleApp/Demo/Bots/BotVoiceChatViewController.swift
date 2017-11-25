@@ -45,7 +45,7 @@ class BotVoiceChatViewController: UIViewController, AWSLexVoiceButtonDelegate {
     }
     
     func voiceButton(_ button: AWSLexVoiceButton, on response: AWSLexVoiceButtonResponse) {
-        print("on text output \(response.outputText)")
+        print("on text output \(String(describing: response.outputText))")
         self.output.text = response.outputText
     }
     

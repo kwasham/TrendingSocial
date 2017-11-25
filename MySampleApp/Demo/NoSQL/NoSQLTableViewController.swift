@@ -277,7 +277,7 @@ class NoSQLTableViewController: UITableViewController {
         let cancelAction: UIAlertAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
         alartController.addAction(proceedAction)
         alartController.addAction(cancelAction)
-        self.present(alartController, animated: true, completion: { _ in })
+        //self.present(alartController, animated: true, completion: { _ in })
     }
     
     func removeSampleData() {

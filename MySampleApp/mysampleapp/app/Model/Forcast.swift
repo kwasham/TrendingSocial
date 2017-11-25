@@ -14,6 +14,16 @@ class Forcast {
     var _weatherType: String!
     var _highTemp: Double!
     var _lowTemp: Double!
+    var _weatherIcon: Int!
+    
+    
+    
+    var weatherIcon: Int {
+        if _weatherIcon == nil {
+            _weatherIcon = 44
+        }
+        return _weatherIcon
+    }
     
     var date: String {
         if _date == nil {
@@ -48,6 +58,7 @@ class Forcast {
 
     init(weatherDict: Dictionary<String, AnyObject>) {
 
+        
             
         if let temp = weatherDict["Temperature"] as? Dictionary<String, AnyObject> {
             if let min = temp["Minimum"] as? Dictionary<String, AnyObject> {
@@ -74,6 +85,13 @@ class Forcast {
                         self._weatherType = weatherPhrase
                     }
                 }
+        
+        if let icon = weatherDict["Day"] as? Dictionary<String, AnyObject> {
+            if let weatherIcon = icon["Icon"] as? Int {
+                
+                self._weatherIcon = weatherIcon
+            }
+        }
 
 
         if let date = weatherDict["EpochDate"] as? Double {

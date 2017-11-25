@@ -19,7 +19,8 @@ let API_KEY = "a57dfc06a41dc99adb90e3de286f6b32"
 typealias DownloadComplete = () -> ()
 
 //let CURRENT_WEATHER_URL =  "\(BASE_URL)lat=\(LATITUDE)&lon=\(LONGITUDE)\(APP_ID)\(API_KEY)"
-let CURRENT_WEATHER_URL =  "http://dataservice.accuweather.com/currentconditions/v1/\(LOCATION)?apikey=Ie6yeG9ij659FVe2RZGEhRkgAwgSm1rE"
+let CURRENT_WEATHER_URL = "http://dataservice.accuweather.com/currentconditions/v1/\(LOCATION)?apikey=Ie6yeG9ij659FVe2RZGEhRkgAwgSm1rE"
+
 
 let CURRENT_LOCATION_URL = "http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=Ie6yeG9ij659FVe2RZGEhRkgAwgSm1rE&q=\(Location.sharedInstance.latitude!)%2C%20\(Location.sharedInstance.longitude!)"
 

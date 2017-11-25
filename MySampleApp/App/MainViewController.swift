@@ -53,7 +53,7 @@ class MainViewController: UITableViewController {
                 comment: "Label for demo menu option."),
             detail: NSLocalizedString("Enable user login with popular 3rd party providers.",
                 comment: "Description for demo menu option."),
-            icon: "UserIdentityIcon", storyboard: "Weather")
+            icon: "UserIdentityIcon", storyboard: "Main1")
         
         demoFeatures.append(demoFeature)
         
@@ -89,7 +89,7 @@ class MainViewController: UITableViewController {
                 comment: "Label for demo menu option."),
             detail: NSLocalizedString("Understand user intent and trigger business workflows using voice and chat interfaces.",
                 comment: "Description for demo menu option."),
-            icon: "BotsIcon", storyboard: "Bots")
+            icon: "BotsIcon", storyboard: "Wallet")
         
         demoFeatures.append(demoFeature)
         
@@ -129,7 +129,7 @@ class MainViewController: UITableViewController {
                                                           configuration: config,
                                                           completionHandler: { (provider: AWSSignInProvider, error: Error?) in
                                                             if error != nil {
-                                                                print("Error occurred: \(error)")
+                                                                print("Error occurred: \(String(describing: error))")
                                                             } else {
                                                                 self.onSignIn(true)
                                                             }
@@ -164,7 +164,7 @@ class MainViewController: UITableViewController {
         let settings = ColorThemeSettings.sharedInstance
         settings.loadSettings { (themeSettings: ColorThemeSettings?, error: Error?) -> Void in
             guard let themeSettings = themeSettings else {
-                 print("Failed to load color: \(error)")
+                print("Failed to load color: \(String(describing: error))")
                 return
             }
             DispatchQueue.main.async(execute: {
@@ -172,13 +172,13 @@ class MainViewController: UITableViewController {
                 self.navigationController!.navigationBar.barTintColor = themeSettings.theme.titleBarColor.UIColorFromARGB()
                 self.view.backgroundColor = themeSettings.theme.backgroundColor.UIColorFromARGB()
                 self.navigationController!.navigationBar.tintColor = titleTextColor
-                self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: titleTextColor]
+                self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: titleTextColor]
             })
         }
     }
     
     
-    func handleLogout() {
+    @objc func handleLogout() {
         if (AWSSignInManager.sharedInstance().isLoggedIn) {
             ColorThemeSettings.sharedInstance.wipe()
             AWSSignInManager.sharedInstance().logout(completionHandler: {(result: Any?, error: Error?) in

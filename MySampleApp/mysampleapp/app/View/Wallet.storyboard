@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wallet-->
+        <scene sceneID="UFz-Ih-kFz">
+            <objects>
+                <viewController storyboardIdentifier="Wallet" title="Wallet" id="Rcl-uv-U36" customClass="WalletVC" customModule="MySampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xwr-sF-B9J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ijo-ji-yhq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ijo-ji-yhq" firstAttribute="bottom" secondItem="z0d-0W-bPn" secondAttribute="bottom" id="ROc-Q2-kpu"/>
+                            <constraint firstItem="ijo-ji-yhq" firstAttribute="trailing" secondItem="z0d-0W-bPn" secondAttribute="trailing" id="WeC-hN-vd8"/>
+                            <constraint firstItem="ijo-ji-yhq" firstAttribute="leading" secondItem="z0d-0W-bPn" secondAttribute="leading" id="ug3-9a-TAs"/>
+                            <constraint firstItem="ijo-ji-yhq" firstAttribute="top" secondItem="xwr-sF-B9J" secondAttribute="top" id="vau-wd-SLX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="z0d-0W-bPn"/>
+                    </view>
+                    <connections>
+                        <outlet property="textbox" destination="ijo-ji-yhq" id="IAe-Z7-oLp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rfm-OQ-HTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-191.19999999999999" y="60.719640179910051"/>
+        </scene>
+    </scenes>
+</document>

@@ -61,7 +61,7 @@ class UserEngageViewController: UIViewController {
         pinpointTargetingClient.updateEndpointProfile()
     }
     
-    func onRemoteNotificationRegistered()   {
+    @objc func onRemoteNotificationRegistered()   {
         let endpoint = pinpointClient.targetingClient.currentEndpointProfile()
         #if (arch(i386) || arch(x86_64))
             self.addressLabel.text = "Address: Push notifications only work on hardware devices."

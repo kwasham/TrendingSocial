@@ -1,40 +1,45 @@
 PODS:
   - Alamofire (4.5.1)
-  - AWSAuthCore (2.6.4):
-    - AWSCore (= 2.6.4)
-  - AWSAuthUI (2.6.4):
-    - AWSAuthCore (= 2.6.4)
-    - AWSCore (= 2.6.4)
-  - AWSCognito (2.6.4):
-    - AWSCore (= 2.6.4)
-  - AWSCognitoIdentityProvider (2.6.4):
-    - AWSCore (= 2.6.4)
-  - AWSCore (2.6.4)
-  - AWSDynamoDB (2.6.4):
-    - AWSCore (= 2.6.4)
-  - AWSFacebookSignIn (2.6.4):
-    - AWSAuthCore (= 2.6.4)
+  - AWSAuthCore (2.6.6):
+    - AWSCore (= 2.6.6)
+  - AWSAuthUI (2.6.6):
+    - AWSAuthCore (= 2.6.6)
+    - AWSCore (= 2.6.6)
+  - AWSCognito (2.6.6):
+    - AWSCore (= 2.6.6)
+  - AWSCognitoIdentityProvider (2.6.6):
+    - AWSCore (= 2.6.6)
+  - AWSCore (2.6.6)
+  - AWSDynamoDB (2.6.6):
+    - AWSCore (= 2.6.6)
+  - AWSFacebookSignIn (2.6.6):
+    - AWSAuthCore (= 2.6.6)
     - FBSDKCoreKit (~> 4.0)
     - FBSDKLoginKit (~> 4.0)
-  - AWSLex (2.6.4):
-    - AWSCore (= 2.6.4)
-  - AWSPinpoint (2.6.4):
-    - AWSCore (= 2.6.4)
-  - AWSS3 (2.6.4):
-    - AWSCore (= 2.6.4)
-  - AWSUserPoolsSignIn (2.6.4):
-    - AWSAuthCore (= 2.6.4)
-    - AWSCognitoIdentityProvider (= 2.6.4)
+  - AWSLex (2.6.6):
+    - AWSCore (= 2.6.6)
+  - AWSPinpoint (2.6.6):
+    - AWSCore (= 2.6.6)
+  - AWSS3 (2.6.6):
+    - AWSCore (= 2.6.6)
+  - AWSUserPoolsSignIn (2.6.6):
+    - AWSAuthCore (= 2.6.6)
+    - AWSCognitoIdentityProvider (= 2.6.6)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
-  - FBSDKCoreKit (4.27.1):
+  - FBSDKCoreKit (4.28.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.27.1):
+  - FBSDKLoginKit (4.28.0):
     - FBSDKCoreKit
+  - Geth (1.7.3-unstable.11452)
+  - Socket.IO-Client-Swift (13.0.1):
+    - Starscream (~> 3.0.2)
+  - Starscream (3.0.2)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
@@ -47,24 +52,31 @@ DEPENDENCIES:
   - AWSPinpoint (~> 2.6.1)
   - AWSS3 (~> 2.6.1)
   - AWSUserPoolsSignIn (~> 2.6.1)
+  - Geth (= 1.7.3-unstable.11452)
+  - Socket.IO-Client-Swift (~> 13.0)
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  AWSAuthCore: 498900114b313b8d5e9263a02b67ccc67c806e1f
-  AWSAuthUI: ec286ce457b214f97a4b62b2f9c1c4fbc9fbd47e
-  AWSCognito: 730f6795c78817ff86701844fb22ca40d129494b
-  AWSCognitoIdentityProvider: 20106092269dc86ae8b2070840bb568aa9097787
-  AWSCore: f5611be1c3edc38dbf9d6da0a5d2b6c4841d1c05
-  AWSDynamoDB: 3edc327d45883810fc0d7881398c97add2577f89
-  AWSFacebookSignIn: 5c5a077755f39111e2f8db1c25ea6107acca8058
-  AWSLex: d868e83cf427f5139a2c3ff43a1e9c9178e10b9b
-  AWSPinpoint: b0717d727093579c67bcfb10b4a5703ab808bda6
-  AWSS3: f7a10f4c6bae46efc9a4588a1480a6761edcbc45
-  AWSUserPoolsSignIn: 89414c3034b3a1449182c96175c8473c80e30f88
+  AWSAuthCore: 3d6f2d3a62efaa8a02fa4323ff4b297b56be0312
+  AWSAuthUI: a90df858b93c2b5fae0f4f2877e3416a5a9d4bd8
+  AWSCognito: 7683df59094f1b4cd50d5a8e870a8ff59224d9b3
+  AWSCognitoIdentityProvider: 123faad1d1e8361f2c76132f552008d5c4928541
+  AWSCore: 64619e45b47678afab53ca0f9b4fa380ebee6f0b
+  AWSDynamoDB: 02a1de576c49d3dc20c6ca6f11e692150e4a726a
+  AWSFacebookSignIn: 194841fb5e47d5c285bebd799f55fe07061f3b70
+  AWSLex: e08735734f2a3e34040b673cdec3d9f2381e4dc2
+  AWSPinpoint: e5de8e8daa1c4b482c9d82ec0f83df18a18678da
+  AWSS3: 44c99957a049703e06b474f4b1898da215f2d922
+  AWSUserPoolsSignIn: 15181f004d5ef846ee94595a69502cce85c999a8
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  FBSDKCoreKit: 03365dad5d790249196ffad8be4f6d8a2d98f932
-  FBSDKLoginKit: 66ff53b73cffd967ab773e32fac39e90a60e6d46
+  FBSDKCoreKit: ca961e279113f691fd83dc634c0bbad9d4e3f370
+  FBSDKLoginKit: b077381c27d800f21661757e8140cf2c80a91e4a
+  Geth: 6a242ba9eb7f09863dd47e08330a64b483f3f1f6
+  Socket.IO-Client-Swift: 7055c89b7a9926b343194c4cac75998329c4a95a
+  Starscream: b512c62f6706421221b5ceb2ba01a9f58aca5bea
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 234d191faa4285f2ff3bdeffaff431c11c69163c
+PODFILE CHECKSUM: af44a15ca441d20b1ad11b7d69e81ab2cbee9fc6
 
 COCOAPODS: 1.3.1

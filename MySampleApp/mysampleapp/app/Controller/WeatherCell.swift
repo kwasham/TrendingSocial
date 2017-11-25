@@ -27,8 +27,9 @@ class WeatherCell: UITableViewCell {
         lowTemp.text = "\(forcast.lowTemp)"
         highTemp.text = "\(forcast.highTemp)"
         weatherType.text = forcast.weatherType
-        weatherIcon.image = UIImage(named: forcast.weatherType)
+        weatherIcon.image = UIImage(named: "\(forcast.weatherIcon)-s.png")
         dayLabel.text = forcast.date
+        //backgroundColor = UIColor.clear
     }
 
     

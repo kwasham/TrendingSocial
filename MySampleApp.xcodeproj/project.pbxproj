@@ -10,8 +10,13 @@
 		163A581B1F9AA35D00FDF04D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163A581A1F9AA35D00FDF04D /* Constants.swift */; };
 		163A581D1F9AA71E00FDF04D /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163A581C1F9AA71E00FDF04D /* CurrentWeather.swift */; };
 		163A581F1F9B035C00FDF04D /* Forcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163A581E1F9B035C00FDF04D /* Forcast.swift */; };
+		165F93831FC272BB008E9959 /* WalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165F93821FC272BB008E9959 /* WalletVC.swift */; };
+		165F93851FC28643008E9959 /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165F93841FC28643008E9959 /* Wallet.storyboard */; };
 		169409E61F997A3B00C5B4B7 /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 169409E51F997A3B00C5B4B7 /* Weather.storyboard */; };
 		169409E81F997EF000C5B4B7 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169409E71F997EF000C5B4B7 /* WeatherVC.swift */; };
+		16A4E4141FC89D0000439F7C /* Main1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A4E4131FC89D0000439F7C /* Main1.storyboard */; };
+		16A4E4161FC8D4A900439F7C /* Main1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A4E4151FC8D4A900439F7C /* Main1VC.swift */; };
+		16A4E41B1FC8F05B00439F7C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A4E41A1FC8F05B00439F7C /* SWRevealViewController.m */; };
 		16E745AD1F9BBC85009F7498 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E745AC1F9BBC85009F7498 /* WeatherCell.swift */; };
 		16E745AF1F9C616D009F7498 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E745AE1F9C616D009F7498 /* Location.swift */; };
 		E7A30F0401AB593000000000 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD70E29DBFB0B3000000000 /* UtilityFunctions.swift */; };
@@ -97,8 +102,15 @@
 		163A581A1F9AA35D00FDF04D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = MySampleApp/mysampleapp/app/Constants.swift; sourceTree = SOURCE_ROOT; };
 		163A581C1F9AA71E00FDF04D /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrentWeather.swift; path = mysampleapp/mysampleapp/app/Model/CurrentWeather.swift; sourceTree = SOURCE_ROOT; };
 		163A581E1F9B035C00FDF04D /* Forcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Forcast.swift; path = mysampleapp/mysampleapp/app/Model/Forcast.swift; sourceTree = SOURCE_ROOT; };
+		165F93821FC272BB008E9959 /* WalletVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletVC.swift; sourceTree = "<group>"; };
+		165F93841FC28643008E9959 /* Wallet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wallet.storyboard; sourceTree = "<group>"; };
 		169409E51F997A3B00C5B4B7 /* Weather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Weather.storyboard; path = MySampleApp/mysampleapp/app/View/Weather.storyboard; sourceTree = SOURCE_ROOT; };
 		169409E71F997EF000C5B4B7 /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
+		16A4E4131FC89D0000439F7C /* Main1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main1.storyboard; path = MySampleApp/mysampleapp/app/View/Main1.storyboard; sourceTree = SOURCE_ROOT; };
+		16A4E4151FC8D4A900439F7C /* Main1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main1VC.swift; sourceTree = "<group>"; };
+		16A4E4181FC8F05900439F7C /* MySampleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MySampleApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		16A4E4191FC8F05A00439F7C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		16A4E41A1FC8F05B00439F7C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		16E745AC1F9BBC85009F7498 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 		16E745AE1F9C616D009F7498 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		1DD70E290280702600000000 /* BotOperationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BotOperationsViewController.swift; path = MySampleApp/Demo/Bots/BotOperationsViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -200,6 +212,10 @@
 		169409E21F9978B200C5B4B7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				165F93821FC272BB008E9959 /* WalletVC.swift */,
+				169409E71F997EF000C5B4B7 /* WeatherVC.swift */,
+				16E745AC1F9BBC85009F7498 /* WeatherCell.swift */,
+				16A4E4151FC8D4A900439F7C /* Main1VC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -207,9 +223,9 @@
 		169409E31F9978C700C5B4B7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				16E745AC1F9BBC85009F7498 /* WeatherCell.swift */,
-				169409E71F997EF000C5B4B7 /* WeatherVC.swift */,
 				169409E51F997A3B00C5B4B7 /* Weather.storyboard */,
+				165F93841FC28643008E9959 /* Wallet.storyboard */,
+				16A4E4131FC89D0000439F7C /* Main1.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -357,11 +373,14 @@
 		B401C97973A7E06900000000 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				16A4E4191FC8F05A00439F7C /* SWRevealViewController.h */,
+				16A4E41A1FC8F05B00439F7C /* SWRevealViewController.m */,
+				16A4E4181FC8F05900439F7C /* MySampleApp-Bridging-Header.h */,
 				1DD70E29A3A8DB6400000000 /* Info.plist */,
 				1DD70E290350BF4400000000 /* awsconfiguration.json */,
 			);
 			name = SupportingFiles;
-			path = mysampleapp/app/supportingfiles;
+			path = ../../../MySampleApp/mysampleapp/app/SupportingFiles;
 			sourceTree = "<group>";
 		};
 		B401C97977A46C3500000000 /* AmazonAws */ = {
@@ -504,6 +523,7 @@
 				TargetAttributes = {
 					E66DC04E0000000000000000 = {
 						DevelopmentTeam = 8S8H54VKPE;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -545,6 +565,8 @@
 				E7A30F047C83C3F000000000 /* Engage.storyboard in Resources */,
 				E7A30F04E8A86A1600000000 /* ContentDelivery.storyboard in Resources */,
 				E7A30F040FDDDA5100000000 /* UserDataStorage.storyboard in Resources */,
+				16A4E4141FC89D0000439F7C /* Main1.storyboard in Resources */,
+				165F93851FC28643008E9959 /* Wallet.storyboard in Resources */,
 				E7A30F0490B3B49600000000 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,6 +596,9 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -592,6 +617,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -658,6 +686,7 @@
 				E7A30F0436BD374100000000 /* NoSQLTableListViewController.swift in Sources */,
 				16E745AD1F9BBC85009F7498 /* WeatherCell.swift in Sources */,
 				163A581B1F9AA35D00FDF04D /* Constants.swift in Sources */,
+				16A4E4161FC8D4A900439F7C /* Main1VC.swift in Sources */,
 				E7A30F04C456522500000000 /* NoSQLTableFactory.swift in Sources */,
 				169409E81F997EF000C5B4B7 /* WeatherVC.swift in Sources */,
 				E7A30F046C5A0D7100000000 /* UserSettingsViewController.swift in Sources */,
@@ -675,6 +704,7 @@
 				E7A30F040ED565D400000000 /* BotOperationsViewController.swift in Sources */,
 				16E745AF1F9C616D009F7498 /* Location.swift in Sources */,
 				E7A30F0476E9634500000000 /* NoSQLSampleDataGenerator.swift in Sources */,
+				165F93831FC272BB008E9959 /* WalletVC.swift in Sources */,
 				163A581D1F9AA71E00FDF04D /* CurrentWeather.swift in Sources */,
 				E7A30F0401AB593000000000 /* UtilityFunctions.swift in Sources */,
 				E7A30F047F82983000000000 /* NoSQLTableViewController.swift in Sources */,
@@ -682,6 +712,7 @@
 				163A581F1F9B035C00FDF04D /* Forcast.swift in Sources */,
 				E7A30F0460EB778000000000 /* NoSQLModelHelpers.swift in Sources */,
 				E7A30F0454CB432200000000 /* UserEngageViewController.swift in Sources */,
+				16A4E41B1FC8F05B00439F7C /* SWRevealViewController.m in Sources */,
 				E7A30F047E096F2900000000 /* BotTextChatViewController.swift in Sources */,
 				E7A30F047C37581C00000000 /* UserIdentityViewController.swift in Sources */,
 				E7A30F04EC48E6D300000000 /* BotsLandingViewController.swift in Sources */,
@@ -745,6 +776,7 @@
 			baseConfigurationReference = 390E7C8DFA73FD4CAE844997 /* Pods-MySampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MySampleApp/MySampleApp.entitlements;
 				CODE_SIGN_IDENTITY = "iphone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -766,7 +798,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "56a5aab1-9448-4de4-b1a5-9a30dc0abcd8";
 				PROVISIONING_PROFILE_SPECIFIER = "pushFirst Profile";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "MySampleApp/mysampleapp/app/SupportingFiles/MySampleApp-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -831,6 +864,7 @@
 			baseConfigurationReference = E7EA37460CC2BFEC69EE76CD /* Pods-MySampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MySampleApp/MySampleApp.entitlements;
 				CODE_SIGN_IDENTITY = "iphone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -852,7 +886,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "56a5aab1-9448-4de4-b1a5-9a30dc0abcd8";
 				PROVISIONING_PROFILE_SPECIFIER = "pushFirst Profile";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "MySampleApp/mysampleapp/app/SupportingFiles/MySampleApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;

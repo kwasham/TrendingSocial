@@ -15,6 +15,16 @@ class CurrentWeather {
     var _currentTemp: Double!
     var _currentLocation: String!
     var _locationKey: Int!
+    var _weatherIcon: Int!
+    
+    
+    
+    var weatherIcon: Int {
+        if _weatherIcon == nil {
+            _weatherIcon = 44
+        }
+        return _weatherIcon
+    }
     
     
     var locationKey: Int {
@@ -62,7 +72,7 @@ class CurrentWeather {
     func downloadCurrentLocation(completed: @escaping DownloadComplete) {
         Alamofire.request(CURRENT_LOCATION_URL).responseJSON { response in
             let result = response.result
-            print(result.value)
+            //print(result.value)
             if let dict = result.value as? Dictionary<String, AnyObject> {
                 
                 if let importedLocationKey = dict["Key"] as? String {
@@ -71,7 +81,7 @@ class CurrentWeather {
                    //
                     self._locationKey = myInt2
                    Location.sharedInstance.locationKey = myInt2
-                    print("KIRK: \(myInt2)")
+                    //print("KIRK: \(myInt2)")
                 }
                 if let name = dict["LocalizedName"] as? String {
                     self._cityName = name.capitalized
@@ -100,13 +110,17 @@ class CurrentWeather {
                         if let value = imperial["Value"] as? Double {
                         
                         self._currentTemp = value
-                        print(self._currentTemp)
+                        //print(self._currentTemp)
                     }
                 }
             }
                 if let weather =  dict[0]["WeatherText"] as? String {
                     self._weatherType = weather
                     
+                }
+                
+                if let icon = dict[0]["WeatherIcon"] as? Int {
+                    self._weatherIcon = icon
                 }
                 
 //                if let main = dict["main"] as? Dictionary<String, AnyObject> {

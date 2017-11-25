@@ -110,7 +110,7 @@ class NewsTable: NSObject, Table {
 
         objectMapper.scan(News.self, expression: scanExpression) { (response: AWSDynamoDBPaginatedOutput?, error: Error?) in
             DispatchQueue.main.async(execute: {
-                completionHandler(response, error as? NSError)
+                completionHandler(response, error as NSError?)
             })
         }
     }
@@ -138,7 +138,7 @@ class NewsTable: NSObject, Table {
         
 
         objectMapper.save(itemForGet, completionHandler: {(error: Error?) -> Void in
-            if let error = error as? NSError {
+            if let error = error as NSError? {
                 DispatchQueue.main.async(execute: {
                     errors.append(error)
                 })
@@ -188,7 +188,7 @@ class NewsTable: NSObject, Table {
         queryExpression.expressionAttributeValues = [":userId": AWSIdentityManager.default().identityId!,]
 
         objectMapper.query(News.self, expression: queryExpression) { (response: AWSDynamoDBPaginatedOutput?, error: Error?) in
-            if let error = error as? NSError {
+            if let error = error as NSError? {
                 DispatchQueue.main.async(execute: {
                     completionHandler([error]);
                     })
@@ -198,7 +198,7 @@ class NewsTable: NSObject, Table {
                 for item in response!.items {
                     group.enter()
                     objectMapper.remove(item, completionHandler: {(error: Error?) in
-                        if let error = error as? NSError {
+                        if let error = error as NSError? {
                             DispatchQueue.main.async(execute: {
                                 errors.append(error)
                             })
@@ -233,7 +233,7 @@ class NewsTable: NSObject, Table {
         
         objectMapper.save(itemToUpdate, completionHandler: {(error: Error?) in
             DispatchQueue.main.async(execute: {
-                completionHandler(error as? NSError)
+                completionHandler(error as NSError?)
             })
         })
     }
@@ -241,9 +241,9 @@ class NewsTable: NSObject, Table {
     func removeItem(_ item: AWSDynamoDBObjectModel, completionHandler: @escaping (_ error: NSError?) -> Void) {
         let objectMapper = AWSDynamoDBObjectMapper.default()
         
-        objectMapper.remove(item, completionHandler: {(error: Error?) in
+        objectMapper.remove(item as! AWSDynamoDBObjectModel & AWSDynamoDBModeling, completionHandler: {(error: Error?) in
             DispatchQueue.main.async(execute: {
-                completionHandler(error as? NSError)
+                completionHandler(error as NSError?)
             })
         })
     }
@@ -279,7 +279,7 @@ class NewsPrimaryIndex: NSObject, Index {
 
         objectMapper.query(News.self, expression: queryExpression) { (response: AWSDynamoDBPaginatedOutput?, error: Error?) in
             DispatchQueue.main.async(execute: {
-                completionHandler(response, error as? NSError)
+                completionHandler(response, error as NSError?)
             })
         }
     }
@@ -308,7 +308,7 @@ class NewsPrimaryIndex: NSObject, Index {
 
         objectMapper.query(News.self, expression: queryExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: Error?) in
             DispatchQueue.main.async(execute: {
-                completionHandler(response, error as? NSError)
+                completionHandler(response, error as NSError?)
             })
         })
     }
@@ -336,7 +336,7 @@ class NewsPrimaryIndex: NSObject, Index {
 
         objectMapper.query(News.self, expression: queryExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: Error?) -> Void in
             DispatchQueue.main.async(execute: {
-                completionHandler(response, error as? NSError)
+                completionHandler(response, error as NSError?)
             })
         })
     }
@@ -368,7 +368,7 @@ class NewsPrimaryIndex: NSObject, Index {
 
         objectMapper.query(News.self, expression: queryExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: Error?) in
             DispatchQueue.main.async(execute: {
-                completionHandler(response, error as? NSError)
+                completionHandler(response, error as NSError?)
             })
         })
     }
@@ -407,7 +407,7 @@ class NewsCategories: NSObject, Index {
 
         objectMapper.query(News.self, expression: queryExpression) { (response: AWSDynamoDBPaginatedOutput?, error: Error?) in
             DispatchQueue.main.async(execute: {
-                completionHandler(response, error as? NSError)
+                completionHandler(response, error as NSError?)
             })
         }
     }
@@ -438,7 +438,7 @@ class NewsCategories: NSObject, Index {
 
         objectMapper.query(News.self, expression: queryExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: Error?) in
             DispatchQueue.main.async(execute: {
-                completionHandler(response, error as? NSError)
+                completionHandler(response, error as NSError?)
             })
         })
     }
@@ -468,7 +468,7 @@ class NewsCategories: NSObject, Index {
 
         objectMapper.query(News.self, expression: queryExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: Error?) -> Void in
             DispatchQueue.main.async(execute: {
-                completionHandler(response, error as? NSError)
+                completionHandler(response, error as NSError?)
             })
         })
     }
@@ -502,7 +502,7 @@ class NewsCategories: NSObject, Index {
 
         objectMapper.query(News.self, expression: queryExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: Error?) in
             DispatchQueue.main.async(execute: {
-                completionHandler(response, error as? NSError)
+                completionHandler(response, error as NSError?)
             })
         })
     }

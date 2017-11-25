@@ -67,7 +67,7 @@ class UserSettingsViewController: UIViewController {
         let settings = ColorThemeSettings.sharedInstance
         settings.loadSettings { (themeSettings: ColorThemeSettings?, error: Error?) in
             guard let themeSettings = themeSettings else {
-                print("Failed to load color from dataset: \(error)")
+                print("Failed to load color from dataset: \(String(describing: error))")
                 return
             }
             DispatchQueue.main.async(execute: {
@@ -87,7 +87,7 @@ class UserSettingsViewController: UIViewController {
         let titleTextColor =  theme.titleTextColor.UIColorFromARGB()
         navigationController!.navigationBar.barTintColor = theme.titleBarColor.UIColorFromARGB()
         navigationController!.navigationBar.tintColor = titleTextColor
-        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: titleTextColor]
+        navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: titleTextColor]
         navigationController?.viewControllers.first?.view.backgroundColor = theme.backgroundColor.UIColorFromARGB()
         view.backgroundColor = theme.backgroundColor.UIColorFromARGB()
     }

@@ -31,6 +31,14 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     var forcast: Forcast!
     var forcasts = [Forcast]()
     
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        locationAuthStatus()
+        tableView.backgroundColor = UIColor.clear
+        updateMainUI()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
@@ -41,17 +49,12 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         tableView.delegate = self
         tableView.dataSource = self
         currentWeather = CurrentWeather()
-        
+        //locationAuthStatus()
       
        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-       
-        
-        locationAuthStatus()
-    }
+  
     
     func locationAuthStatus() {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
@@ -78,11 +81,6 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
                 }
                 
             }
-            
-           
-            
-            
-            print(Location.sharedInstance.latitude, Location.sharedInstance.longitude)
         }else{
             locationManager.requestWhenInUseAuthorization()
             locationAuthStatus()
@@ -97,7 +95,7 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
             let result = response.result
             
             if let dict = result.value as? Dictionary<String , AnyObject> {
-                print(result.value!)
+               // print(result.value!)
             
                 if let dailyForcasts = dict["DailyForecasts"] as? [Dictionary <String , AnyObject>] {
                 
@@ -124,12 +122,14 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         return forcasts.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as? WeatherCell {
-            
+            tableView.backgroundColor = UIColor.clear
             let forcast = forcasts[indexPath.row]
           
         cell.configureCell(forcast: forcast)
+   
         return cell
         
         }else{
@@ -143,7 +143,7 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         currentTempLabel.text = "\(currentWeather.currentTemp)"
         currentWeatherTypeLabel.text = currentWeather.weatherType
         locationLabel.text = currentWeather.cityName
-        currentWeatherImage.image = UIImage(named: currentWeather.weatherType)
+        currentWeatherImage.image = UIImage(named: "\(currentWeather.weatherIcon)-s.png")
     }
     
 }

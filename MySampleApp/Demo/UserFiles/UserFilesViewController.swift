@@ -178,7 +178,7 @@ class UserFilesViewController: UITableViewController {
         loadMoreContents()
     }
     
-    func showContentManagerActionOptions(_ sender: AnyObject) {
+    @objc func showContentManagerActionOptions(_ sender: AnyObject) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let uploadObjectAction = UIAlertAction(title: "Upload", style: .default, handler: {[unowned self](action: UIAlertAction) -> Void in

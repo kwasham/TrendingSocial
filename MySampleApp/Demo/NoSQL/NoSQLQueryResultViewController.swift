@@ -99,7 +99,7 @@ class NoSQLQueryResultViewController: UITableViewController {
             }
             else {
                 DispatchQueue.main.async(execute: {
-                    self.results!.append(contentsOf: self.paginatedOutput!.items)
+                    //self.results!.append(self.paginatedOutput!.items)
                     self.tableView.reloadData()
                     self.loading = false
                 })
@@ -130,7 +130,7 @@ class NoSQLQueryResultViewController: UITableViewController {
         let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alartController.addAction(proceedAction)
         alartController.addAction(cancelAction)
-        self.present(alartController, animated: true, completion: { _ in })
+        //self.present(alartController, animated: true, completion: { _ in })
     }
     
     func updateItemForIndexPath(_ indexPath: IndexPath) {
